@@ -1,0 +1,17 @@
+.mdc-button {
+ font-size: medium;
+ margin-left: 20px;
+}
+
+.active{
+  font-size:90%;
+  text-decoration: underline;
+}
+
+.button-row {
+  padding-top: 3px;
+}
+
+h1 {
+  color:rgb(127, 210, 210);
+}

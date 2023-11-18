@@ -1,0 +1,57 @@
+<mat-card>
+  <mat-card-header>
+    <h2>Authors</h2>
+  </mat-card-header>
+  <mat-card-content>
+    <div style="text-align: right;">
+      <button (click)="addAuthor()" mat-raised-button color="primary">Add author</button>
+    </div>
+    
+    <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>id</th>
+        <td mat-cell *matCellDef="let element">{{element.id}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="surname">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Фамилия</th>
+        <td mat-cell *matCellDef="let element">{{element.surname}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Имя</th>
+        <td mat-cell *matCellDef="let element">{{element.name}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="middleName">
+        <th mat-header-cell *matHeaderCellDef>Отчество</th>
+        <td mat-cell *matCellDef="let element">{{element.middleName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="birthday">
+        <th mat-header-cell *matHeaderCellDef>День рождения</th>
+        <td mat-cell *matCellDef="let element">{{element.birthday}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="add/edit">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button (click)="editAuthor(element.id)" mat-raised-button color="primary">
+            <mat-icon fontIcon="edit"></mat-icon>
+          </button>
+          <button (click)="removeAuthor(element.id)" mat-raised-button color="accent">
+            <mat-icon fontIcon="delete"></mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </mat-card-content>
+  <mat-card-footer>
+    <mat-paginator [pageSizeOptions]="[10,20]" showFirstLastButtons></mat-paginator>
+  </mat-card-footer>
+</mat-card>

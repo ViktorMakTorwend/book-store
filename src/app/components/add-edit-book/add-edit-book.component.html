@@ -1,0 +1,38 @@
+<form [formGroup]="bookForm">
+  <mat-card>
+    <mat-card-header>
+      <h1>{{pageTitle}}</h1>
+    </mat-card-header>
+    <mat-card-content>
+
+      <mat-form-field>
+        <mat-label>Автор</mat-label>
+        <mat-select formControlName="author">
+          <mat-option *ngFor="let aut of allAuthors" [value]="aut">
+            {{ aut }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Название</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Издатель</mat-label>
+        <input matInput formControlName="publisher">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>год</mat-label>
+        <input type="date" matInput formControlName="publishYear">
+      </mat-form-field>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="saveBookModal()" mat-raised-button color="primary">Save</button>
+      <button (click)="closePopUpEditBook()" mat-raised-button color="primary">Close</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

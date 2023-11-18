@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -63,7 +64,8 @@
               "browserTarget": "book-store:build:production"
             },
             "development": {
-              "browserTarget": "book-store:build:development"
+              "browserTarget": "book-store:build:development",
+              "port": 41469
             }
           },
           "defaultConfiguration": "development"
@@ -87,6 +89,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
