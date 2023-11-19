@@ -4,9 +4,12 @@ import { AuthorComponent } from './components/author/author.component';
 import { BookComponent } from './components/book/book.component';
 
 const routes: Routes = [
-  {path:"author",component:AuthorComponent},
-  {path:"book",component:BookComponent},
-  {path:"**", redirectTo: "author"},
+  { path: "", component: AuthorComponent },
+  { path: "book", component: BookComponent },
+  { path: "**", redirectTo: "/" },
+  // {path:"author",component:AuthorComponent},
+  // {path:"book",component:BookComponent},
+  // {path:"**", redirectTo: "author"},
 ];
 
 @NgModule({
